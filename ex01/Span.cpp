@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 18:00:41 by mroux             #+#    #+#             */
-/*   Updated: 2021/07/07 22:46:44 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/07 22:58:41 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,6 @@ long Span::longestSpan() const throw(NotEnoughItems)
 {
 	if (_v.size() <= 1)
 		throw NotEnoughItems();
-	long maxSpan = 0;
-	std::vector<int> v1 = _v;
-	std::vector<int> v2 = _v;
-
-	for (std::vector<int>::iterator it1 = v1.begin(); it1 != v1.end(); it1++)
-	{
-		for (std::vector<int>::iterator it2 = it1 + 1; it2 != v1.end(); it2++)
-		{
-			if (abs(*it2 - *it1) > maxSpan)
-				maxSpan = abs(*it2 - *it1);
-		}
-	}
+	long maxSpan = *std::max_element(_v.begin(), _v.end()) - *std::min_element(_v.begin(), _v.end());
 	return (maxSpan);
 }
