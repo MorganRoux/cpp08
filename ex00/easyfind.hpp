@@ -17,17 +17,9 @@ class	NotFoundException : public std::exception
 template<typename T>
 bool easyfind(T& t, int i) throw(NotFoundException)
 {
-	typename T::iterator it;
-	for(it = t.begin(); it!=t.end(); it++)
-    {
-        if (*it == i)
-		{
-			std::cout << "Found !" << std::endl;
-			return (true);
-		}
-    }
-	throw NotFoundException();
-	return(false);
+	if (std::find(t.begin(), t.end(), i) == t.end())
+		throw NotFoundException();
+	return(true);
 }
 
 #endif

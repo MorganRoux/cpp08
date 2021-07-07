@@ -3,7 +3,6 @@
 int main(void)
 {
 	std::vector<int> vi;
-	std::string a = "7";
 	vi.push_back(1);
 	vi.push_back(2);
 	vi.push_back(3);
