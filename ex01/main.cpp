@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 18:08:40 by mroux             #+#    #+#             */
-/*   Updated: 2021/07/07 22:48:42 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/08 09:15:19 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ int main(void)
 	std::cout << sp.longestSpan() << std::endl;
 
 	srand(time(NULL));
+
 	std::vector<int> v(10001);
 	std::generate(v.begin(), v.end(), rand);
 	Span sp2(10001);
-	sp2.addNumber(v);
+	sp2.addNumber<std::vector>(v);
 	std::cout << sp2.shortestSpan() << std::endl;
 	std::cout << sp2.longestSpan() << std::endl;
 }

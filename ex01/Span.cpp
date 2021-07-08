@@ -6,7 +6,7 @@
 /*   By: mroux <mroux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 18:00:41 by mroux             #+#    #+#             */
-/*   Updated: 2021/07/07 22:58:41 by mroux            ###   ########.fr       */
+/*   Updated: 2021/07/08 08:57:13 by mroux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,6 @@ void	Span::addNumber(int i) throw(ArrayFullException)
 	if (_v.size() == _maxElmt)
 		throw ArrayFullException();
 	_v.push_back(i);
-}
-
-void	Span::addNumber(std::vector<int> v) throw(ArrayFullException)
-{
-	for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
-		addNumber(*it);
 }
 
 long Span::shortestSpan() const throw(NotEnoughItems)
